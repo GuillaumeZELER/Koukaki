@@ -1,0 +1,157 @@
+/* _menu.scss */
+
+.navigation {
+  position: relative;
+  display: flex;
+  height: 80px;
+  background: #ffd5a2;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    margin: unset;
+    padding-left: unset;
+  }
+
+  .title-site {
+    text-align: center;
+    font-family: "quicksand";
+    font-size: 1.9rem;
+    margin-top: none;
+    display: inline;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    margin: 4px 0;
+  }
+
+  #burger-btn {
+    position: absolute;
+    top: 25%;
+    left: 90%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+}
+
+#menu-fullscreen {
+  position: fixed;
+  top: -100%;
+  /*  max-width: 1440px; */
+  width: 100%;
+  height: 100vh;
+  background: #fff5e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transform-origin: top;
+  transition: top 0.7s ease-in-out;
+  overflow: hidden;
+
+  &.active {
+    top: 80px;
+  }
+
+  .logo {
+    display: block;
+    position: absolute;
+    top: 3%;
+    width: 25%;
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    margin-top: 120px;
+
+    li {
+      a {
+        color: #000;
+        text-decoration: none;
+        font-size: 3rem;
+
+        &:hover {
+          text-shadow: 0px 0px 14px #ff5c00;
+        }
+      }
+    }
+
+    p {
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 10%;
+    }
+  }
+}
+
+.rdm-flower {
+  position: absolute;
+  top: 40%;
+  right: -2%;
+  width: 5%;
+}
+
+.hibiscus {
+  position: absolute;
+  width: 30%;
+  bottom: -17%;
+  right: -15%;
+}
+
+.orchid {
+  position: absolute;
+  top: 7%;
+  left: -4%;
+}
+
+.flower {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 5%;
+}
+
+.sun-flower {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+}
+
+.yellow-cat {
+  position: absolute;
+  width: 5%;
+  bottom: 20%;
+  left: 4%;
+}
+
+.dark-cat {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  width: 7%;
+}
+
+.cat {
+  position: absolute;
+  top: 23%;
+  left: 20%;
+}
+
+.cat,
+.dark-cat,
+.yellow-cat {
+  animation: float-move-infinite 3s ease-in-out infinite;
+}

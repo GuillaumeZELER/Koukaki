@@ -1,0 +1,419 @@
+/* Custom SCSS here for Koukaki */
+
+/* animation de rotation */
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* Rotation complète (360 degrés) */
+  }
+}
+
+
+
+/* classes appliquant la rotation */
+
+.rotate_af::after{
+animation: rotation 4s linear infinite; /* Rotation continue pendant 4 secondes */
+}
+
+.rotate_bf::before{
+animation: rotation 4s linear infinite; /* Rotation continue pendant 4 secondes */
+}
+
+
+
+/* transform origin pour que les fleurs tournent sur leur centre */
+
+#studio h2::after {
+transform-origin: 54px 54px;
+}
+
+#studio h2::before {
+transform-origin: 101px 101px;
+}
+
+.site-footer::before, .story h2::after {
+transform-origin: 77px 77px;
+}
+
+
+/* animation apparition des sections */
+
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+
+
+/* animation apparition des h2 */
+@keyframes slidein {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toSlide {
+  opacity: 0;
+  display: block;
+}
+.slide-in {
+  opacity: 0;
+  animation: slidein 1s linear forwards;
+}
+
+
+/* espace avant le h2 l'histoire pour permettre le parallax de la vidéo + décalage fleur */
+
+.space_before {
+  margin-top: 130px;
+}
+
+.story__article::before {
+  top: 17em;
+}
+.story__article::after {
+  top: 10em;
+}
+
+
+/* Fix soucis d'affichage de la fleur du H2 histoire */
+
+.story h2::after {
+  left: -357px !important;
+}
+
+.story h2::before {
+  left: -400px;
+}
+
+
+/* section oscars */
+
+.site-footer {
+display: block;
+}
+
+.oscar {
+display: flex;
+margin-left: 15%;
+margin-right: 15%;
+margin-bottom: 50px;
+
+  &_background{
+    background-image: url('../assets/images/orange.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  & p{
+      font-family: Quicksand;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 50px;
+      letter-spacing: -0.02em;
+      color: white;
+      padding-top: 7px;
+      padding-bottom: 50px;
+      padding-left: 60px;
+      padding-right: 30px;
+      text-shadow: #000 1px 0 10px;
+  }
+
+  & img {
+      width: 278px;
+      height: 129px;
+      margin-top: 30px;
+  }
+}
+
+
+/* video */
+
+.banner {
+  min-height: unset;
+}
+#banner {
+  position: relative;
+
+  animation: animeBanner 2s ease-in;
+
+  /*Video Bg*/
+
+  @keyframes animeBanner {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fallback-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%; // Limite la largeur à 100% de son conteneur
+    z-index: -2;
+  }
+
+  #bg-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+
+  #logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    // Animation de flottement
+    animation: floatLogo 3s ease-in-out infinite alternate;
+    z-index: 1;
+  }
+
+  // Effet de flottement du logo
+  @keyframes floatLogo {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-50%, -55%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+//retire l'ombre de swiper
+
+.swiper-3d .swiper-slide-shadow-right, .swiper-3d .swiper-slide-shadow-left {
+  background-image: none !important;
+}
+
+
+//animation nuages
+
+.story #place {
+  background-image: url('../assets/images/bg-lieu.png');
+  position: relative;
+}
+
+.story .little-cloud,
+.story .big-cloud {
+  position: absolute;
+  z-index: 1;
+  filter: blur(25px);
+}
+
+.story .big-cloud {
+  top: 150px;
+  right: 0px;
+}
+
+.story .little-cloud {
+  top: 350px;
+  right: 0px;
+}
+
+.story .little-cloud.scrolling,
+.story .big-cloud.scrolling {
+  animation: cloud-movement linear forwards;
+}
+
+@keyframes cloud-movement {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-300px);
+  }
+}
+
+
+//menu pleine page
+
+.navigation {
+  position: relative;
+  display: flex;
+  height: 80px;
+  background: #ffd5a2;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    margin: unset;
+    padding-left: unset;
+  }
+
+  .title-site {
+    text-align: center;
+    font-family: "quicksand";
+    font-size: 1.9rem;
+    margin-top: none;
+    display: inline;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    margin: 4px 0;
+  }
+
+  #burger-btn {
+    position: absolute;
+    top: 25%;
+    left: 90%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+}
+
+#menu-fullscreen {
+  position: fixed;
+  top: -100%;
+  /*  max-width: 1440px; */
+  width: 100%;
+  height: 100vh;
+  background: #fff5e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transform-origin: top;
+  transition: top 0.7s ease-in-out;
+  overflow: hidden;
+
+  &.active {
+    top: 80px;
+  }
+
+  .logo {
+    display: block;
+    position: absolute;
+    top: 3%;
+    width: 25%;
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    margin-top: 120px;
+
+    li {
+      a {
+        color: #000;
+        text-decoration: none;
+        font-size: 3rem;
+
+        &:hover {
+          text-shadow: 0px 0px 14px #ff5c00;
+        }
+      }
+    }
+
+    p {
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 10%;
+    }
+  }
+}
+
+.logo {
+  margin-left: 25%;
+  margin-top: 100px;
+}
+
+.rdm-flower {
+  position: absolute;
+  top: 40%;
+  right: -2%;
+  width: 5%;
+}
+
+.hibiscus {
+  position: absolute;
+  width: 30%;
+  bottom: -17%;
+  right: -15%;
+}
+
+.orchid {
+  position: absolute;
+  top: 7%;
+  left: -4%;
+}
+
+.flower {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 5%;
+}
+
+.sun-flower {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+}
+
+.yellow-cat {
+  position: absolute;
+  width: 5%;
+  bottom: 20%;
+  left: 4%;
+}
+
+.dark-cat {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  width: 7%;
+}
+
+.cat {
+  position: absolute;
+  top: 23%;
+  left: 20%;
+}
+
+.sun-flower, .flower, .orchid, .hibiscus, .rdm-flower {
+  animation: rotation 4s linear infinite; /* Rotation continue pendant 4 secondes */
+}
+
+.cat,
+.dark-cat,
+.yellow-cat, .logo {
+  animation: floatLogo 3s ease-in-out infinite alternate;
+}

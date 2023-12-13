@@ -1,0 +1,169 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+ /*Fade-in via le scroll pour les sections*/
+ .fade-in-section {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+  
+  .fade-in-section.show {
+    opacity: 1;
+  }
+
+  .site-footer {
+    padding-top: 7em;
+}
+
+/*Slidein pour les h2*/
+.slide-in {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  /*Fleurs animées*/
+  
+.site-footer::before {
+	animation: rotatesunflower 5s infinite linear;
+}
+
+@keyframes rotatesunflower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.site-footer::after {
+	animation: rotateOrchid 6s infinite linear;
+}
+@keyframes rotateOrchid {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.story__article::after {
+    animation: rotateHibiscus 5s infinite linear;
+}
+
+@keyframes rotateHibiscus {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.story h2::after {
+    animation: rotateSunflower 6s infinite linear;
+}
+@keyframes rotateSunflower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#studio h2::before {
+    animation: rotateRandomflower 12s infinite linear;
+}
+@keyframes rotateRandomflower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#studio h2::after {
+    animation: rotateFlower 15s infinite linear;
+}
+@keyframes rotateFlower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*Fin fleurs tournantes*/
+
+/*Background des H2 s'affiche en fade-in*/
+h2 {
+    color: #FFF5E9;
+    font-size: 4.429rem;
+    background-image: url(./assets/images/purple_title_bg.png);
+    background-color: #FFF5E9;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 1em 2em;
+    margin: 0;
+    background-position: center;
+    text-align: center;
+}
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .oscar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+   margin-bottom: 155px;
+}
+
+  h2.titre_oscar {
+    background-color: transparent;
+  }
+  .titre_oscar {
+    color: #FFF5E9;
+    font-size: 2.4rem;
+    padding: 1.8em 2em;
+    background-image: url(./assets/images/titre_oscar_bg.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  }
+  
+  .imgRight {
+    margin-left: 1em;
+  }
+  

@@ -1,0 +1,272 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+@import "assets/scss/navigation";
+
+.post,
+.page {
+  max-width: none;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+//Agrandir un peu les txt
+p {
+  font-size: 20px;
+}
+
+/*SLide des titres h2*/
+.toSlide {
+  opacity: 0;
+  height: 80px;
+  display: block;
+}
+.slide-in {
+  opacity: 0;
+  animation: slidein 1s linear forwards;
+}
+@keyframes slidein {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*Fin des slides titre h2*/
+
+.site-footer {
+  padding-top: 7em;
+
+  &::before {
+    animation: rotateFlower 5s infinite linear;
+  }
+
+  &::after {
+    animation: rotateFlower 6s infinite linear;
+  }
+
+  & ul::after {
+    animation: rotateFlower 5s infinite linear;
+  }
+}
+
+.story__article::after {
+  animation: rotateFlower 5s infinite linear;
+}
+
+.story h2::after {
+  animation: rotateFlower 6s infinite linear;
+}
+
+#studio h2::before {
+  animation: rotateFlower 12s infinite linear;
+}
+
+#studio h2::after {
+  animation: rotateFlower 15s infinite linear;
+}
+
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+h2 {
+  color: #fff5e9;
+  font-size: 4.429rem;
+  //background-image: url(./assets/images/purple_title_bg.png);
+  background-color: #fff5e9;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 0;
+  background-position: center;
+  text-align: center;
+}
+#story h2 {
+  margin-top: 121px;
+}
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .oscar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    margin-bottom: 155px;
+  }
+
+  h2.titre_oscar {
+    background-color: transparent;
+  }
+
+  .titre_oscar {
+    color: #fff5e9;
+    font-size: 2.4rem;
+    padding: 1.8em 2em;
+    background-image: url(./assets/images/titre_oscar_bg.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .imgRight {
+    margin-left: 1em;
+  }
+}
+.banner {
+  /*   display:block; 
+  min-height: auto;
+  background-size: auto; */
+  min-height: unset;
+}
+#banner {
+  position: relative;
+
+  animation: animeBanner 2s ease-in;
+
+  /*Video Bg*/
+
+  @keyframes animeBanner {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fallback-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%; // Limite la largeur à 100% de son conteneur
+    z-index: -2;
+  }
+
+  #bg-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    transform: none !important;
+  }
+
+  #logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    // Animation de flottement
+    animation: floatLogo 3s ease-in-out infinite alternate;
+    z-index: 1;
+  }
+
+  // Effet de flottement du logo
+  @keyframes floatLogo {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-50%, -55%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+
+  & img {
+    display: block;
+    width: 100%;
+  }
+}
+
+figcaption {
+  text-align: center;
+}
+
+.story #place {
+  background-image: url(./assets/images/bg-lieu.png);
+  position: relative;
+}
+
+/* CLOUDS POSITIONING AND ANIMATION */
+
+.story .little-cloud,
+.story .big-cloud {
+  position: absolute;
+  z-index: 1;
+  filter: blur(25px);
+}
+
+.story .big-cloud {
+  top: 150px;
+  right: 0px;
+}
+
+.story .little-cloud {
+  top: 350px;
+  right: 0px;
+}
+
+.story .little-cloud.scrolling,
+.story .big-cloud.scrolling {
+  animation: cloud-movement linear forwards;
+}
+
+@keyframes cloud-movement {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-300px);
+  }
+}
+
+@import "assets/scss/responsive";
+/*npm run compile:sass OU npm run watch:sass */ /*etre placé dans le theme enfant*/

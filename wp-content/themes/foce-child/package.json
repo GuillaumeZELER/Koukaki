@@ -1,0 +1,20 @@
+{
+  "name": "foce-child",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass style.scss style.css",
+    "watch:sass": "node-sass style.scss style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.0",
+    "simple-parallax-js": "^5.6.2"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
